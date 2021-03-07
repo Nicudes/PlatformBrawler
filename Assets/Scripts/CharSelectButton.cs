@@ -14,6 +14,8 @@ public class CharSelectButton : MonoBehaviour
     public float waitToPopUp;
     private float popCounter;
 
+    public AnimatorOverrideController theController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,7 @@ public class CharSelectButton : MonoBehaviour
 
             if (thePlayer.theRB.velocity.y < -.1f)
             {
+                thePlayer.anim.runtimeAnimatorController = theController;
 
                 isPressed = true;
 
